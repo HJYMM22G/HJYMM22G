@@ -2,6 +2,9 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  background-color: #FBF9F3;
+  color: #2C2E33;
+
 }
 
 #root {
