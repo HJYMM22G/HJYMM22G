@@ -1,5 +1,6 @@
 import {
   ActionIcon,
+  Box,
   Container,
   Group,
   Text,
@@ -11,6 +12,7 @@ import {
   IconBrandLinkedin,
   IconBrandYoutube,
 } from '@tabler/icons-react';
+import logo from '../assets/imgs/logo.png';
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -28,6 +30,8 @@ const useStyles = createStyles((theme) => ({
   },
 
   logo: {
+    width: '8rem',
+    height: '5rem',
     maxWidth: rem(200),
 
     [theme.fn.smallerThan('sm')]: {
@@ -144,8 +148,13 @@ export function Footer({ data }: FooterProps) {
   return (
     <footer className={classes.footer}>
       <Container className={classes.inner}>
-        {/*div till logotyp*/}
-        <div></div>
+        <Box>
+          <img
+            className={classes.logo}
+            alt="Logo of Devstudio"
+            src={logo}
+          ></img>
+        </Box>
         <div className={classes.groups}>{groups}</div>
       </Container>
       <Container className={classes.afterFooter}>
