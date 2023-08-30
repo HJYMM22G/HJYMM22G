@@ -1,39 +1,51 @@
-import { Container, Text } from "@mantine/core";
+import { Anchor, Container, createStyles, rem } from "@mantine/core";
 
-export default function Header() {
+const useStyles = createStyles((theme) => ({
+  headerContainer: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: `0 ${theme.spacing.md}`,
+  },
+  logo: {
+    width: rem(60),
+  },
+  linkContainer: {
+    marginLeft: "auto",
+    marginRight: 0,
+  },
+  link: {
+    color: theme.black,
+    textDecoration: "none",
+    fontSize: rem(16),
+  },
+}));
+
+const Header = () => {
+  const { classes } = useStyles();
+
   return (
-    <Container
-      style={{
-        backgroundColor: "beige",
-        padding: "1rem",
-        borderBottom: "1px solid #ccc",
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <ul
-        style={{
-          listStyle: "none",
-          display: "flex",
-          justifyContent: "space-around",
-          alignItems: "center",
-          padding: 0,
-          margin: 0,
-          width: "100%",
-        }}
-      >
-        <li>
-          <Text size="xl">Home</Text>
-        </li>
-        <li>
-          <Text size="xl">Dashboard</Text>
-        </li>
-        <li>
-          <Text size="xl">Profile</Text>
-        </li>
-      </ul>
+    <Container size="xl">
+      <div className={classes.headerContainer}>
+        <div className={classes.logo}>
+          <img src="DevStudio.loggan-placering" alt="Logo" width="100%" />
+        </div>
+        <div className={classes.linkContainer}>
+          <Container style={{ display: "flex", gap: "1rem" }}>
+            <Anchor className={classes.link} href="/services">
+              Services
+            </Anchor>
+            <Anchor className={classes.link} href="/AboutUs">
+              About Us
+            </Anchor>
+            <Anchor className={classes.link} href="/Contact">
+              Contact
+            </Anchor>
+          </Container>
+        </div>
+      </div>
     </Container>
   );
-}
+};
+
+export default Header;
