@@ -13,8 +13,11 @@ const useStyles = createStyles((theme) => ({
   },
 
   image: {
+    height: '31.25rem',
+    width: '31.25rem',
     [theme.fn.smallerThan('sm')]: {
-      display: 'none',
+      height: '12.5rem',
+      width: '12.5rem',
     },
   },
 
@@ -71,12 +74,11 @@ export function Hero() {
               company grow
             </Title>
           </Box>
-          <Box className={classes.image}>
+          <Box>
             <img
-              height="500"
-              width="500"
               alt="an illustration showcasing 2 people surrounded by vegetation. One is using a magnifying glass and the other one is reading a book."
               src={heroimg}
+              className={classes.image}
             />
           </Box>
         </Box>
