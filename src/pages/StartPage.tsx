@@ -1,17 +1,15 @@
-import { Link } from "react-router-dom";
-import { staffData } from "../data/staffData";
+import BrandBanner from '../components/BrandBanner';
+import { Hero } from '../components/Hero';
+import { ServicesSection } from '../components/ServicesSection';
+import { TeamSection } from '../components/TeamSection';
 
 export function StartPage() {
-    return (
-        <>
-            <h1>Välkommen</h1>
-            <div>
-                {staffData.map(person => (
-                    <Link key={person.id} to={`/about/${person.name.toLowerCase()}`}>
-                        <button>{person.name}</button>
-                    </Link>
-                ))}
-            </div>
-        </>
-    )
+  return (
+    <>
+      <Hero />
+      <TeamSection />
+      <ServicesSection />
+      <BrandBanner />
+    </>
+  );
 }
