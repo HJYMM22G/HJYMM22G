@@ -1,4 +1,5 @@
 import { Col, Container, Grid, Text, Title } from '@mantine/core';
+import { IconPinnedFilled } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
 import { staffData } from '../data/staffData';
 
@@ -6,7 +7,7 @@ export function TeamSection() {
   return (
     <Container size="xl">
       <Container sx={{ display: 'flex', padding: '0', margin: '0', gap: 2 }}>
-        <img src="../src/assets/pin.png" alt="" style={{ height: '1.4rem' }} />
+        <IconPinnedFilled />
         <Text sx={{ marginLeft: '0.6rem' }}>Who we are</Text>
       </Container>
       <Title order={1}>Empowering your digital future.</Title>
