@@ -13,7 +13,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   image: {
-    [theme.fn.smallerThan('md')]: {
+    [theme.fn.smallerThan('sm')]: {
       display: 'none',
     },
   },
