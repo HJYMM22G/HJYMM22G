@@ -42,7 +42,6 @@ export function ServicesSection() {
       >
         <Container sx={{ display: 'flex', padding: '0', margin: '0' }}>
           <IconPinnedFilled />
-
           <Text sx={{ marginLeft: '0.6rem' }}>Our Services</Text>
         </Container>
         <Title order={1} sx={{ paddingBottom: '0.5rem' }}>
