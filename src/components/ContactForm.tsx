@@ -1,21 +1,19 @@
-import { Box, Button, Container, Select, TextInput, Textarea, createStyles } from "@mantine/core";
+import { Box, Button, Container, Select, SimpleGrid, TextInput, Textarea, createStyles } from "@mantine/core";
 import { IconChevronDown } from "@tabler/icons-react";
 import { useEffect, useRef } from "react";
+import * as yup from 'yup';
+
+const formSchema = yup.object().shape({
+  name: yup.string().required('Name is required.'),
+  email: yup.string().email('Invalid email.').required('Email is required.'),
+  person: yup.string().required('Select a person to contact.'),
+  message: yup.string().min(3, 'Message is required.')
+});
 
 const useStyles = createStyles((theme) => ({
-  firstrow: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    marginBottom: '15px',
-    gap: "4rem"
-  },
   firstrowinput: {
-    flex: 1,
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
   },
-}))
-
-const myStyles = {
   input: {
     backgroundColor: 'transparent',
     borderColor: 'black',
@@ -24,7 +22,10 @@ const myStyles = {
   dropdown: {
     backgroundColor: '#FBF9F3',
   },
-};
+  rightSection: {
+    cursor: 'pointer',
+  },
+}))
 
 export function ContactForm() {
   const { classes } = useStyles();
@@ -47,49 +48,68 @@ export function ContactForm() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+
+
   return (
     <Box>
       <Container size="sm">
-        <Box className={classes.firstrow}>
+        <SimpleGrid
+        cols={2}
+        spacing="xl"
+        mb={20}
+        breakpoints={[
+          { maxWidth: 'sm', cols: 1, spacing: 'xl'},
+        ]}>
           <Box className={classes.firstrowinput}>
             <TextInput
-            ref={nameInputRef}
-            required
-            size="md"
-            label="Name"
-            styles={myStyles} />
+              ref={nameInputRef}
+              required
+              size="md"
+              label="Name"
+              classNames={{
+                input: classes.input
+              }} />
           </Box>
           <Box className={classes.firstrowinput}>
             <TextInput
-            required
-            size="md"
-            label="Email"
-            styles={myStyles} />
+              required
+              size="md"
+              label="Email"
+              classNames={{
+                input: classes.input
+              }} />
           </Box>
-        </Box>
+        </SimpleGrid>
 
-        <Box style={{ marginBottom: '15px' }}>
+        <Box mb={20}>
           <Select
-            label="Person"
+            label="I would like to contact"
             required
             size="md"
             rightSection={<IconChevronDown size="1rem" />}
             rightSectionWidth={30}
-            styles={{ ...myStyles, rightSection: { cursor: 'pointer' } }}
+            classNames={{
+              input: classes.input,
+              dropdown: classes.dropdown,
+              rightSection: classes.rightSection
+            }}
             data={['Person 1', 'Person 2', 'Person 3', 'Person 4', 'Person 5']}
           />
         </Box>
 
-        <Box style={{ marginBottom: '15px' }}>
+        <Box mb={20}>
           <Textarea
-          required
-          minRows={6}
-          size="md"
-          label="Message" styles={myStyles} />
+            required
+            minRows={6}
+            size="md"
+            label="Message"
+            classNames={{
+              input: classes.input,
+            }} />
         </Box>
 
         <Box style={{ textAlign: 'center' }}>
-          <Button>Send Message</Button>
+          <Button radius="xs" type="submit">Send Message</Button>
         </Box>
       </Container>
     </Box>
