@@ -1,15 +1,15 @@
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* display: flex; */
+  /* place-items: center; */
   background-color: #FBF9F3;
   color: #2C2E33;
 
 }
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  /* max-width: 1280px; */
+  margin: 0;
   padding: 2rem;
-  text-align: center;
+  /* text-align: center; */
 }
