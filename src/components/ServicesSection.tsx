@@ -1,4 +1,5 @@
 import { Container, Text, Title } from '@mantine/core';
+import { IconPinnedFilled } from '@tabler/icons-react';
 
 export function ServicesSection() {
   return (
@@ -27,11 +28,8 @@ export function ServicesSection() {
         }}
       >
         <Container sx={{ display: 'flex', padding: '0', margin: '0' }}>
-          <img
-            src="../src/assets/pin.png"
-            alt=""
-            style={{ height: '1.4rem' }}
-          />
+          <IconPinnedFilled />
+
           <Text sx={{ marginLeft: '0.6rem' }}>Our Services</Text>
         </Container>
         <Title order={1} sx={{ paddingBottom: '0.5rem' }}>
