@@ -8,9 +8,19 @@ export function ServicesSection() {
       sx={{
         display: 'flex',
         marginTop: '4rem',
+        marginBottom: '4rem',
       }}
     >
-      <Container sx={{ display: 'flex', flex: 1, width: '100%' }}>
+      <Container
+        sx={{
+          display: 'flex',
+          flex: 1,
+          width: '100%',
+          '@media (max-width: 800px)': {
+            display: 'none',
+          },
+        }}
+      >
         <img
           src="../src/assets/services.png"
           alt=""
@@ -25,6 +35,9 @@ export function ServicesSection() {
           justifyContent: 'center',
           width: '100%',
           paddingLeft: '4rem',
+          '@media (max-width: 800px)': {
+            paddingLeft: '0',
+          },
         }}
       >
         <Container sx={{ display: 'flex', padding: '0', margin: '0' }}>
