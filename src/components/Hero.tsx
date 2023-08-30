@@ -60,7 +60,7 @@ const useStyles = createStyles((theme) => ({
 export function Hero() {
   const { classes } = useStyles();
   return (
-    <Box>
+    <Box sx={{ marginBottom: '5rem' }}>
       <Container>
         <Box className={classes.inner}>
           <Box className={classes.content}>
