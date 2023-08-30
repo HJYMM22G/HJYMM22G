@@ -28,7 +28,11 @@ const Header = () => {
     <Container size="xl">
       <div className={classes.headerContainer}>
         <div className={classes.logo}>
-          <img src="DevStudio.loggan-placering" alt="Logo" width="100%" />
+          <img
+            src="../src/assets/logos/devSTUDIO.png"
+            alt="Logo"
+            width="100%"
+          />
         </div>
         <div className={classes.linkContainer}>
           <Container style={{ display: "flex", gap: "1rem" }}>
