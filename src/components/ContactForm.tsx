@@ -2,6 +2,7 @@ import { Box, Button, Container, Select, SimpleGrid, TextInput, Textarea, create
 import { IconChevronDown } from "@tabler/icons-react";
 import { useEffect, useRef } from "react";
 import * as yup from 'yup';
+import { staffData } from "../data/staffData";
 
 const formSchema = yup.object().shape({
   name: yup.string().required('Name is required.'),
@@ -18,12 +19,33 @@ const useStyles = createStyles((theme) => ({
     backgroundColor: 'transparent',
     borderColor: 'black',
     boxShadow: 'none',
+    '&:focus': {
+      borderColor: '#BAB653',
+    },
   },
   dropdown: {
     backgroundColor: '#FBF9F3',
   },
   rightSection: {
     cursor: 'pointer',
+  },
+  button: {
+    backgroundColor: '#BAB653',
+    '&:focus': {
+      backgroundColor: '#A5A14C',
+      outlineColor: '#646338',
+    },
+    '&:hover': {
+      backgroundColor: '#A5A14C',
+    },
+  },
+  item: {
+    '&[data-selected]': {
+      backgroundColor: '#BAB653',
+      '&:hover': {
+        backgroundColor: '#A5A14C',
+      },
+    },
   },
 }))
 
@@ -47,8 +69,6 @@ export function ContactForm() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-
 
   return (
     <Box>
@@ -91,9 +111,10 @@ export function ContactForm() {
             classNames={{
               input: classes.input,
               dropdown: classes.dropdown,
-              rightSection: classes.rightSection
+              rightSection: classes.rightSection,
+              item: classes.item,
             }}
-            data={['Person 1', 'Person 2', 'Person 3', 'Person 4', 'Person 5']}
+            data={staffData.map((staff) => staff.fullName)}
           />
         </Box>
 
@@ -109,7 +130,7 @@ export function ContactForm() {
         </Box>
 
         <Box style={{ textAlign: 'center' }}>
-          <Button radius="xs" type="submit">Send Message</Button>
+          <Button size="md" radius="xs" type="submit" className={classes.button}>Send Message</Button>
         </Box>
       </Container>
     </Box>
