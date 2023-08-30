@@ -15,18 +15,18 @@ export function StaffPage() {
         <IconPinnedFilled />
         <Text sx={{ marginLeft: "0.6rem" }}>Who we are</Text>
       </Container>
-      {person ? (
-        <div>
-          <h1>{person.name}</h1>
-          <p>Role: {person.role}</p>
-          <p>Bio: {person.bio}</p>
-        </div>
-      ) : (
-        <div>Personen finns tyvärr inte.</div>
-      )}
 
       <Grid gutter="md" mt="xl">
         <Col span={6}>
+          {person ? (
+            <div>
+              <h1>{person.name}</h1>
+              <p>Role: {person.role}</p>
+              <p>Bio: {person.bio}</p>
+            </div>
+          ) : (
+            <div>Personen finns tyvärr inte.</div>
+          )}
           <div
             style={{
               border: `${person.color} 6px solid`,
@@ -72,7 +72,7 @@ export function StaffPage() {
             }}
           >
             <img
-              src={person.image}
+              src="as"
               alt=""
               style={{ height: "100%", width: "100%", objectFit: "cover" }}
             />
