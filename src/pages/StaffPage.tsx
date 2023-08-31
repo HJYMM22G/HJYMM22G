@@ -31,6 +31,7 @@ export function StaffPage() {
             <Text sx={{ marginLeft: "0.6rem" }}>Who we are</Text>
           </Container>
         </Col>
+
         <Col span={6} span-sm={12}>
           <Title>{person.fullName}</Title>
           <Text>{person.role}</Text>
@@ -40,6 +41,7 @@ export function StaffPage() {
           </Title>
           <Text mt={"0.5rem"}>{person.mail}</Text>
         </Col>
+
         <Col
           span={6}
           span-sm={12}
@@ -73,6 +75,7 @@ export function StaffPage() {
             />
           </div>
         </Col>
+
         <Col span={6} span-sm={12}>
           <Title order={2}>About {person ? person.name : "Name"}</Title>
           <Text mt={"1rem"}>
@@ -83,6 +86,7 @@ export function StaffPage() {
             boundaries.
           </Text>
         </Col>
+
         <Col span={6} span-sm={12}>
           <Image
             maw={240}
@@ -92,6 +96,7 @@ export function StaffPage() {
             alt="Vector staff"
           />
         </Col>
+
         <Col span={6} span-sm={12}>
           <Title order={2}>My Expertises</Title>
           <div
