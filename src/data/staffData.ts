@@ -7,6 +7,7 @@ export interface Staff {
   description: string;
   image: string;
   color: string;
+  mail?: string;
 }
 
 export const staffData: Staff[] = [
@@ -19,6 +20,7 @@ export const staffData: Staff[] = [
     description: 'Martina is a creative individual who also likes to develop',
     image: '../src/assets/staff/martina.png',
     color: '#DEB8FC',
+    mail: 'martina.kreivi@medieinstitutet.se',
   },
   {
     id: 2,
@@ -29,6 +31,7 @@ export const staffData: Staff[] = [
     description: 'Hampus is a creative individual who also likes to develop',
     image: '../src/assets/staff/hampus.png',
     color: '#353519',
+    mail: 'hampus.isebring@medieinstitutet.se',
   },
   {
     id: 3,
@@ -39,6 +42,7 @@ export const staffData: Staff[] = [
     description: 'Moa is a creative individual who also likes to develop',
     image: '../src/assets/staff/moa.png',
     color: '#E9CF81',
+    mail: 'moa.hedendahl@medieinstitutet.se',
   },
   {
     id: 4,
@@ -49,6 +53,7 @@ export const staffData: Staff[] = [
     description: 'Yehad is a creative individual who also likes to develop',
     image: '../src/assets/staff/yehad.png',
     color: '#F98638',
+    mail: 'yehad.moussaoui@medieinstitutet.se',
   },
   {
     id: 5,
@@ -59,5 +64,6 @@ export const staffData: Staff[] = [
     description: 'Jenny is a creative individual who also likes to develop',
     image: '../src/assets/staff/jenny.png',
     color: '#FFAA9F',
+    mail: 'jenny.pettersson@medieinstitutet.se',
   },
 ];

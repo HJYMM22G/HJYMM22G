@@ -1,5 +1,15 @@
 import { Col, Container, Grid, Image, Text, Title } from "@mantine/core";
-import { IconPinnedFilled } from "@tabler/icons-react";
+import {
+  IconBrandCss3,
+  IconBrandFigma,
+  IconBrandGithub,
+  IconBrandHtml5,
+  IconBrandJavascript,
+  IconBrandNpm,
+  IconBrandReact,
+  IconBrandTypescript,
+  IconPinnedFilled,
+} from "@tabler/icons-react";
 import { useParams } from "react-router-dom";
 import { staffData } from "../data/staffData";
 
@@ -12,7 +22,7 @@ export function StaffPage() {
   return (
     <Container>
       <Grid gutter="md">
-        <Col span={12}>
+        <Col span={12} span-sm={24}>
           {" "}
           <Container
             sx={{ display: "flex", padding: "0", marginTop: "3rem", gap: 2 }}
@@ -21,17 +31,16 @@ export function StaffPage() {
             <Text sx={{ marginLeft: "0.6rem" }}>Who we are</Text>
           </Container>
         </Col>
-        <Col span={6}>
+        <Col span={6} span-sm={12}>
           <Title>{person.fullName}</Title>
           <Text>{person.role}</Text>
           <Text mt={"2rem"}>{person.description}</Text>
           <Title size="sm" mt={"2rem"}>
             Contact me!
           </Title>
-          <Text>Mail</Text>
-          <Text>Phone</Text>
+          <Text mt={"0.5rem"}>{person.mail}</Text>
         </Col>
-        <Col span={6}>
+        <Col span={6} span-sm={12}>
           {" "}
           <div
             style={{
@@ -57,8 +66,8 @@ export function StaffPage() {
             />
           </div>
         </Col>
-        <Col span={6}>
-          <Title size={"lg"}>About {person ? person.name : "Name"}</Title>
+        <Col span={6} span-sm={12}>
+          <Title order={2}>About {person ? person.name : "Name"}</Title>
           <Text mt={"1rem"}>
             With a flair for front-end development and user experience design,{" "}
             {person ? person.name : "they"}'s expertise in HTML, CSS, and
@@ -67,7 +76,7 @@ export function StaffPage() {
             boundaries.
           </Text>
         </Col>
-        <Col span={6}>
+        <Col span={6} span-sm={12}>
           <Image
             maw={240}
             mx="auto"
@@ -76,8 +85,22 @@ export function StaffPage() {
             alt="Vector staff"
           />
         </Col>
-        <Col span={6}>
-          <Title size={"md"}>My Expertises</Title>
+        <Col span={6} span-sm={12}>
+          <Title order={2}>My Expertises</Title>
+          <div
+            style={{
+              marginTop: "1rem",
+            }}
+          >
+            <IconBrandHtml5 />
+            <IconBrandCss3 />
+            <IconBrandJavascript />
+            <IconBrandTypescript />
+            <IconBrandReact />
+            <IconBrandNpm />
+            <IconBrandFigma />
+            <IconBrandGithub />
+          </div>
         </Col>
       </Grid>
     </Container>
