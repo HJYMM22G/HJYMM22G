@@ -43,9 +43,21 @@ const formSchema = yup.object().shape({
 });
 
 const useStyles = createStyles((theme) => ({
+  titlecontainer: {
+    display: 'flex',
+    padding: '0',
+    margin: '0',
+    gap: 2,
+  },
+  formcontainer: {
+    '& > *': {
+      marginBottom: '40px',
+    },
+  },
   firstrowinput: {
     backgroundColor: 'transparent',
   },
+  //-----------------------Mantine 'targets'
   input: {
     backgroundColor: 'transparent',
     borderColor: 'black',
@@ -84,11 +96,6 @@ const useStyles = createStyles((theme) => ({
   header: {
     backgroundColor: '#FBF9F3',
   },
-  formcontainer: {
-    '& > *': {
-      marginBottom: '40px',
-    },
-  },
 }));
 
 export function ContactForm() {
@@ -98,6 +105,7 @@ export function ContactForm() {
     useState<IFormData | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  //-----------------------Scroll focus handler
   useEffect(() => {
     const handleScroll = () => {
       const element = nameInputRef.current;
@@ -122,6 +130,7 @@ export function ContactForm() {
       window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  //-----------------------Formik
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -134,19 +143,14 @@ export function ContactForm() {
       setFormData(values);
       console.log(values);
       setIsModalOpen(true);
+      formik.resetForm();
     },
   });
 
   return (
     <Box>
       <Container size='xl'>
-        <Container
-          sx={{
-            display: 'flex',
-            padding: '0',
-            margin: '0',
-            gap: 2,
-          }}>
+        <Container className={classes.titlecontainer}>
           <IconPinnedFilled />
           <Text sx={{marginLeft: '0.6rem'}}>
             Reach out to us
@@ -279,6 +283,7 @@ export function ContactForm() {
           </Container>
         </form>
       </Container>
+
       <Modal
         opened={isModalOpen}
         onClose={() => setIsModalOpen(false)}
