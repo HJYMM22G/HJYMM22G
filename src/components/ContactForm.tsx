@@ -14,9 +14,17 @@ import {
   IconChevronDown,
   IconPinnedFilled,
 } from '@tabler/icons-react';
-import {useEffect, useRef} from 'react';
+import {useFormik} from 'formik';
+import {useEffect, useRef, useState} from 'react';
 import * as yup from 'yup';
 import {staffData} from '../data/staffData';
+
+interface IFormData {
+  name: string;
+  email: string;
+  person: string;
+  message: string;
+}
 
 const formSchema = yup.object().shape({
   name: yup.string().required('Name is required.'),
@@ -27,7 +35,10 @@ const formSchema = yup.object().shape({
   person: yup
     .string()
     .required('Select a person to contact.'),
-  message: yup.string().min(3, 'Message is required.'),
+  message: yup
+    .string()
+    .min(3, 'Message is too short.')
+    .required('Message is required.'),
 });
 
 const useStyles = createStyles((theme) => ({
@@ -71,6 +82,8 @@ const useStyles = createStyles((theme) => ({
 export function ContactForm() {
   const {classes} = useStyles();
   const nameInputRef = useRef<HTMLInputElement>(null);
+  const [formData, setFormData] =
+    useState<IFormData | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -96,6 +109,20 @@ export function ContactForm() {
       window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      person: '',
+      message: '',
+    },
+    validationSchema: formSchema,
+    onSubmit: (values) => {
+      setFormData(values);
+      console.log(values);
+    },
+  });
+
   return (
     <Box>
       <Container size='xl'>
@@ -116,78 +143,125 @@ export function ContactForm() {
           style={{textAlign: 'center'}}>
           Get in touch
         </Title>
-        <Container size='sm'>
-          <SimpleGrid
-            cols={2}
-            spacing='xl'
-            mb={40}
-            breakpoints={[
-              {maxWidth: 'sm', cols: 1, spacing: 'xl'},
-            ]}>
-            <Box className={classes.firstrowinput}>
-              <TextInput
-                ref={nameInputRef}
+        <form onSubmit={formik.handleSubmit}>
+          <Container size='sm'>
+            <SimpleGrid
+              cols={2}
+              spacing='xl'
+              mb={40}
+              breakpoints={[
+                {maxWidth: 'sm', cols: 1, spacing: 'xl'},
+              ]}>
+              <Box className={classes.firstrowinput}>
+                <TextInput
+                  ref={nameInputRef}
+                  required
+                  size='lg'
+                  label='Name'
+                  name='name'
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.name}
+                  error={
+                    formik.touched.name &&
+                    formik.errors.name
+                      ? formik.errors.name
+                      : undefined
+                  }
+                  classNames={{
+                    input: classes.input,
+                  }}
+                />
+              </Box>
+              <Box className={classes.firstrowinput}>
+                <TextInput
+                  required
+                  size='lg'
+                  label='Email'
+                  name='email'
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.email}
+                  error={
+                    formik.touched.email &&
+                    formik.errors.email
+                      ? formik.errors.email
+                      : undefined
+                  }
+                  classNames={{
+                    input: classes.input,
+                  }}
+                />
+              </Box>
+            </SimpleGrid>
+
+            <Box mb={40}>
+              <Select
+                label='I would like to contact'
+                name='person'
+                onChange={(value) =>
+                  formik.setFieldValue('person', value)
+                }
+                onBlur={formik.handleBlur}
+                value={formik.values.person}
+                error={
+                  formik.touched.person &&
+                  formik.errors.person
+                    ? formik.errors.person
+                    : undefined
+                }
                 required
                 size='lg'
-                label='Name'
+                rightSection={
+                  <IconChevronDown size='2rem' />
+                }
+                rightSectionWidth={40}
+                classNames={{
+                  input: classes.input,
+                  dropdown: classes.dropdown,
+                  rightSection: classes.rightSection,
+                  item: classes.item,
+                }}
+                data={staffData.map(
+                  (staff) => staff.fullName,
+                )}
+              />
+            </Box>
+
+            <Box mb={40}>
+              <Textarea
+                required
+                minRows={6}
+                size='lg'
+                label='Message'
+                name='message'
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.message}
+                error={
+                  formik.touched.message &&
+                  formik.errors.message
+                    ? formik.errors.message
+                    : undefined
+                }
                 classNames={{
                   input: classes.input,
                 }}
               />
             </Box>
-            <Box className={classes.firstrowinput}>
-              <TextInput
-                required
+
+            <Box style={{textAlign: 'center'}}>
+              <Button
                 size='lg'
-                label='Email'
-                classNames={{
-                  input: classes.input,
-                }}
-              />
+                radius='xs'
+                type='submit'
+                px={50}
+                className={classes.button}>
+                Send Message
+              </Button>
             </Box>
-          </SimpleGrid>
-
-          <Box mb={40}>
-            <Select
-              label='I would like to contact'
-              required
-              size='lg'
-              rightSection={<IconChevronDown size='2rem' />}
-              rightSectionWidth={40}
-              classNames={{
-                input: classes.input,
-                dropdown: classes.dropdown,
-                rightSection: classes.rightSection,
-                item: classes.item,
-              }}
-              data={staffData.map(
-                (staff) => staff.fullName,
-              )}
-            />
-          </Box>
-
-          <Box mb={40}>
-            <Textarea
-              required
-              minRows={6}
-              size='lg'
-              label='Message'
-              classNames={{
-                input: classes.input,
-              }}
-            />
-          </Box>
-
-          <Box style={{textAlign: 'center'}}>
-            <Button
-              size='lg'
-              radius='xs'
-              type='submit'
-              className={classes.button}>
-              Send Message
-            </Button>
-          </Box>
-        </Container>
+          </Container>
+        </form>
       </Container>
     </Box>
   );
