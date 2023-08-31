@@ -19,6 +19,10 @@ const useStyles = createStyles((theme) => ({
     marginTop: rem(120),
     paddingTop: `calc(${theme.spacing.xl} * 2)`,
     background: '#FBF9F3',
+    position: 'absolute',
+    bottom: '0',
+    left: '0',
+    right: '0',
   },
 
   actionIcon: {

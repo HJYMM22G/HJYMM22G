@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      <main style={{ marginBottom: '20rem' }}>
         <Outlet />
       </main>
       <Footer data={footerData} />
