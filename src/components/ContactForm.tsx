@@ -300,7 +300,7 @@ export function ContactForm() {
         }}>
         <Text>
           {formData
-            ? `Thank you for your message! ${formData.person} will get back to you as soon as possible!`
+            ? `Thank you for your message, ${formData.name}! ${formData.person} will get back to you as soon as possible!`
             : 'Your message has been sent!'}
         </Text>
       </Modal>
