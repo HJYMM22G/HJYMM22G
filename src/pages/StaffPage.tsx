@@ -40,7 +40,11 @@ export function StaffPage() {
           </Title>
           <Text mt={"0.5rem"}>{person.mail}</Text>
         </Col>
-        <Col span={6} span-sm={12}>
+        <Col
+          span={6}
+          span-sm={12}
+          style={{ display: "flex", justifyContent: "center" }}
+        >
           {" "}
           <div
             style={{
@@ -62,6 +66,9 @@ export function StaffPage() {
                 width: "100%",
                 objectFit: "cover",
                 borderRadius: "100rem",
+                display: "flex",
+                justifyContent: "center",
+                alignContent: "center",
               }}
             />
           </div>
