@@ -17,7 +17,7 @@ export const staffData: Staff[] = [
     role: 'Developer',
     bio: 'Martina är grym',
     description: 'Martina is a creative individual who also likes to develop',
-    image: '../src/assets/martina.png',
+    image: '../src/assets/staff/martina.png',
     color: '#DEB8FC',
   },
   {
@@ -27,7 +27,7 @@ export const staffData: Staff[] = [
     role: 'Developer',
     bio: 'Hampus är grym',
     description: 'Hampus is a creative individual who also likes to develop',
-    image: '../src/assets/hampus.png',
+    image: '../src/assets/staff/hampus.png',
     color: '#353519',
   },
   {
@@ -37,7 +37,7 @@ export const staffData: Staff[] = [
     role: 'Developer',
     bio: 'Moa är grym',
     description: 'Moa is a creative individual who also likes to develop',
-    image: '../src/assets/moa.png',
+    image: '../src/assets/staff/moa.png',
     color: '#E9CF81',
   },
   {
@@ -47,7 +47,7 @@ export const staffData: Staff[] = [
     role: 'Developer',
     bio: 'Yehad är grym',
     description: 'Yehad is a creative individual who also likes to develop',
-    image: '../src/assets/yehad.png',
+    image: '../src/assets/staff/yehad.png',
     color: '#F98638',
   },
   {
@@ -57,7 +57,7 @@ export const staffData: Staff[] = [
     role: 'Developer',
     bio: 'Jenny är grym',
     description: 'Jenny is a creative individual who also likes to develop',
-    image: '../src/assets/jenny.png',
+    image: '../src/assets/staff/jenny.png',
     color: '#FFAA9F',
   },
 ];
