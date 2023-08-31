@@ -1,4 +1,4 @@
-import { Col, Container, Grid, Text } from "@mantine/core";
+import { Col, Container, Grid, Text, Title } from "@mantine/core";
 import { IconPinnedFilled } from "@tabler/icons-react";
 import { useParams } from "react-router-dom";
 import { staffData } from "../data/staffData";
@@ -21,15 +21,14 @@ export function StaffPage() {
         </Container>
       </Col>
       <Col span={6}>
-        {person ? (
-          <div>
-            <h1>{person.name}</h1>
-            <p>Role: {person.role}</p>
-            <p>Bio: {person.bio}</p>
-          </div>
-        ) : (
-          <div>Personen finns tyvärr inte.</div>
-        )}
+        <Title>{person.fullName}</Title>
+        <Text>{person.role}</Text>
+        <Text mt={"2rem"}>{person.description}</Text>
+        <Title size="sm" mt={"2rem"}>
+          Contact me!
+        </Title>
+        <Text>Mail</Text>
+        <Text>Phone</Text>
       </Col>
       <Col span={6}>
         {" "}
@@ -37,8 +36,8 @@ export function StaffPage() {
           style={{
             border: `${person ? person.color : "gray"} 6px solid`,
             borderRadius: "100rem",
-            height: "12rem",
-            width: "12rem",
+            height: "15rem",
+            width: "15rem",
             objectFit: "cover",
           }}
         >
@@ -55,8 +54,8 @@ export function StaffPage() {
         </div>
       </Col>
       <Col span={6}>
-        <Text size="lg">About {person ? person.fullName : "Name"}</Text>
-        <Text>
+        <Title size={"lg"}>About {person ? person.name : "Name"}</Title>
+        <Text mt={"1rem"}>
           With a flair for front-end development and user experience design,{" "}
           {person ? person.name : "they"}'s expertise in HTML, CSS, and
           JavaScript shines through in every project, creating visually stunning
@@ -64,7 +63,9 @@ export function StaffPage() {
         </Text>
       </Col>
       <Col span={6}>Vector bild</Col>
-      <Col span={6}>Kompetenser</Col>
+      <Col span={6}>
+        <Title size={"md"}>My Expertises</Title>
+      </Col>
     </Grid>
   );
 }
