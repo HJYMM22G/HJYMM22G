@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Container,
+  Modal,
   Select,
   SimpleGrid,
   Text,
@@ -77,6 +78,17 @@ const useStyles = createStyles((theme) => ({
       },
     },
   },
+  content: {
+    backgroundColor: '#FBF9F3',
+  },
+  header: {
+    backgroundColor: '#FBF9F3',
+  },
+  formcontainer: {
+    '& > *': {
+      marginBottom: '40px',
+    },
+  },
 }));
 
 export function ContactForm() {
@@ -84,6 +96,7 @@ export function ContactForm() {
   const nameInputRef = useRef<HTMLInputElement>(null);
   const [formData, setFormData] =
     useState<IFormData | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -120,6 +133,7 @@ export function ContactForm() {
     onSubmit: (values) => {
       setFormData(values);
       console.log(values);
+      setIsModalOpen(true);
     },
   });
 
@@ -139,18 +153,20 @@ export function ContactForm() {
           </Text>
         </Container>
         <Title
-          mb={50}
+          mb={{sm: 30, md: 50}}
           style={{textAlign: 'center'}}>
           Get in touch
         </Title>
         <form onSubmit={formik.handleSubmit}>
-          <Container size='sm'>
+          <Container
+            size='sm'
+            className={classes.formcontainer}>
             <SimpleGrid
               cols={2}
-              spacing='xl'
-              mb={40}
+              mb={{sm: 30, md: 40}}
               breakpoints={[
                 {maxWidth: 'sm', cols: 1, spacing: 'xl'},
+                {maxWidth: 'xs', cols: 1, spacing: 'xs'},
               ]}>
               <Box className={classes.firstrowinput}>
                 <TextInput
@@ -195,7 +211,7 @@ export function ContactForm() {
               </Box>
             </SimpleGrid>
 
-            <Box mb={40}>
+            <Box>
               <Select
                 label='I would like to contact'
                 name='person'
@@ -228,7 +244,7 @@ export function ContactForm() {
               />
             </Box>
 
-            <Box mb={40}>
+            <Box>
               <Textarea
                 required
                 minRows={6}
@@ -263,6 +279,26 @@ export function ContactForm() {
           </Container>
         </form>
       </Container>
+      <Modal
+        opened={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title='Message sent!'
+        xOffset={0}
+        centered
+        overlayProps={{
+          blur: 0.5,
+          opacity: 0.1,
+        }}
+        classNames={{
+          content: classes.content,
+          header: classes.header,
+        }}>
+        <Text>
+          {formData
+            ? `Thank you for your message! ${formData.person} will get back to you as soon as possible!`
+            : 'Your message has been sent!'}
+        </Text>
+      </Modal>
     </Box>
   );
 }
