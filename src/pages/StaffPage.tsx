@@ -37,22 +37,22 @@ export function StaffPage() {
             },
           }}
         >
-          <div
-            style={{
-              border: `${person ? person.color : 'gray'} 6px solid`,
-              borderRadius: '100rem',
+          <Container
+            sx={{
               height: '15rem',
               width: '15rem',
 
-              display: 'flex',
-              justifyContent: 'center',
-              alignContent: 'center',
+              '@media (max-width: 800px)': {
+                height: '10rem',
+                width: '10rem',
+              },
             }}
           >
             <img
               src={person ? person.image : '.../assets/placeholder.png'}
               alt={person?.fullName || 'Name'}
               style={{
+                border: `${person ? person.color : 'gray'} 6px solid`,
                 height: '100%',
                 width: '100%',
                 objectFit: 'cover',
@@ -62,8 +62,9 @@ export function StaffPage() {
                 alignContent: 'center',
               }}
             />
-          </div>
+          </Container>
         </Col>
+
         <Col span={12} sm={12} md={6}>
           {' '}
           <Container
@@ -119,6 +120,7 @@ export function StaffPage() {
             justifyContent: 'center',
             flexDirection: 'column',
             alignItems: 'center',
+            marginTop: '3rem',
             '@media (max-width: 994px)': {
               display: 'none',
             },
