@@ -3,7 +3,7 @@ export const footerData = [
     title: 'Contact',
     links: [
       { label: 'Head Office', link: '#' },
-      { label: 'Sales Offices', link: '#' },
+      { label: 'Medieinstitutet', link: '#' },
     ],
   },
   {
