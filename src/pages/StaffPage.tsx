@@ -27,9 +27,11 @@ export function StaffPage() {
           ) : (
             <div>Personen finns tyvärr inte.</div>
           )}
+        </Col>
+        <Col span={6}>
           <div
             style={{
-              border: `${person.color} 6px solid`,
+              border: `${person ? person.color : "gray"} 6px solid`,
               borderRadius: "100rem",
               height: "9rem",
               width: "9rem",
@@ -37,7 +39,7 @@ export function StaffPage() {
             }}
           >
             <img
-              src={person.image}
+              src={person ? person.image : ".../assets/placeholder.png"}
               alt=""
               style={{
                 height: "100%",
@@ -48,23 +50,13 @@ export function StaffPage() {
             />
           </div>
         </Col>
-        <Col span={6}>
-          <Text>
-            Meet {person.name}, a passionate software engineer at devSTUDIO.
-            With a knack for elegant solutions, {person.name} thrives on
-            transforming complex problems into streamlined code. Their
-            collaborative nature and innovative thinking make them an invaluable
-            asset to the team, consistently delivering high-quality projects
-            that push the boundaries of technology.
-          </Text>
-        </Col>
       </Grid>
 
       <Grid gutter="md" mt="xl">
         <Col span={6}>
           <div
             style={{
-              border: `${person.color} 6px solid`,
+              border: `${person ? person.color : "gray"} 6px solid`,
               borderRadius: "100rem",
               height: "9rem",
               width: "9rem",
@@ -72,19 +64,20 @@ export function StaffPage() {
             }}
           >
             <img
-              src="as"
+              src=".../assets/VectorIllustration1.png"
               alt=""
               style={{ height: "100%", width: "100%", objectFit: "cover" }}
             />
           </div>
         </Col>
         <Col span={6}>
-          <Text size="lg">About {person.fullName}</Text>
+          <Text size="lg">About {person ? person.fullName : "Name"}</Text>
           <Text>
             With a flair for front-end development and user experience design,{" "}
-            {person.name}'s expertise in HTML, CSS, and JavaScript shines
-            through in every project, creating visually stunning and
-            user-friendly applications that push technological boundaries.
+            {person ? person.name : "they"}'s expertise in HTML, CSS, and
+            JavaScript shines through in every project, creating visually
+            stunning and user-friendly applications that push technological
+            boundaries.
           </Text>
         </Col>
       </Grid>
