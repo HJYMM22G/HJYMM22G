@@ -65,7 +65,7 @@ export function TeamSection() {
                 />
                 <Title order={4}>{person.fullName}</Title>
                 <Text size="sm">{person.role}</Text>
-                <Text>{person.description}</Text>
+                <Text>{person.bio}</Text>
               </Container>
             </Link>
           </Col>
