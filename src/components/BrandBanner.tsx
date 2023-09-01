@@ -1,12 +1,15 @@
 import { Container, Text } from '@mantine/core';
 import { IconPinnedFilled } from '@tabler/icons-react';
 import Marquee from 'react-fast-marquee';
+import Boop from './Boop';
 
 function BrandBanner() {
   return (
     <Container sx={{}}>
       <Container sx={{ display: 'flex', padding: '0', margin: '1rem 0' }}>
-        <IconPinnedFilled />
+        <Boop rotation={10} timing={150}>
+          <IconPinnedFilled />
+        </Boop>
         <Text sx={{ marginLeft: '0.6rem' }}>Our Clients</Text>
       </Container>
       <Marquee

@@ -1,5 +1,6 @@
 import { Box, Container, Text } from '@mantine/core';
 import { IconPinnedFilled } from '@tabler/icons-react';
+import Boop from './Boop';
 
 function MapSection() {
   return (
@@ -20,7 +21,9 @@ function MapSection() {
         }}
       >
         <Container sx={{ display: 'flex', padding: '0', margin: '0', gap: 2 }}>
-          <IconPinnedFilled />
+          <Boop rotation={10} timing={150}>
+            <IconPinnedFilled />
+          </Boop>
           <Text sx={{ marginLeft: '0.6rem' }}>Find us here!</Text>
         </Container>
         <iframe

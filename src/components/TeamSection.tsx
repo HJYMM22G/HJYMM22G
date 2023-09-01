@@ -2,6 +2,7 @@ import { Col, Container, Grid, Text, Title } from '@mantine/core';
 import { IconPinnedFilled } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
 import { staffData } from '../data/staffData';
+import Boop from './Boop';
 
 export function TeamSection() {
   const handleMouseEnter = (event: {
@@ -18,7 +19,9 @@ export function TeamSection() {
   return (
     <Container size="xl">
       <Container sx={{ display: 'flex', padding: '0', margin: '0', gap: 2 }}>
-        <IconPinnedFilled />
+        <Boop rotation={10} timing={150}>
+          <IconPinnedFilled />
+        </Boop>
         <Text sx={{ marginLeft: '0.6rem' }}>Who we are</Text>
       </Container>
       <Title order={1}>Empowering your digital future.</Title>
