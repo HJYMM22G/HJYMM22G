@@ -4,6 +4,17 @@ import { Link } from 'react-router-dom';
 import { staffData } from '../data/staffData';
 
 export function TeamSection() {
+  const handleMouseEnter = (event: {
+    currentTarget: { style: { transform: string } };
+  }) => {
+    event.currentTarget.style.transform = 'scale(1.1)';
+  };
+
+  const handleMouseLeave = (event: {
+    currentTarget: { style: { transform: string } };
+  }) => {
+    event.currentTarget.style.transform = 'scale(1)';
+  };
   return (
     <Container size="xl">
       <Container sx={{ display: 'flex', padding: '0', margin: '0', gap: 2 }}>
@@ -24,9 +35,20 @@ export function TeamSection() {
           <Col span={12} sm={5} lg={2.4} key={person.id}>
             <Link
               to={`/about/${person.name.toLowerCase()}`}
+              onClick={() => {
+                window.scroll(0, 0);
+              }}
               style={{ textDecoration: 'none', color: '#2C2E33' }}
             >
-              <Container style={{ textAlign: 'center' }}>
+              <Container
+                style={{
+                  textAlign: 'center',
+                  transform: 'scale(1)',
+                  transition: 'transform 0.3s ease',
+                }}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
                 <img
                   src={person.image}
                   alt=""
