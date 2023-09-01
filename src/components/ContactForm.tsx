@@ -11,14 +11,12 @@ import {
   Title,
   createStyles,
 } from '@mantine/core';
-import {
-  IconChevronDown,
-  IconPinnedFilled,
-} from '@tabler/icons-react';
-import {useFormik} from 'formik';
-import {useEffect, useRef, useState} from 'react';
+import { IconChevronDown, IconPinnedFilled } from '@tabler/icons-react';
+import { useFormik } from 'formik';
+import { useEffect, useRef, useState } from 'react';
 import * as yup from 'yup';
-import {staffData} from '../data/staffData';
+import { staffData } from '../data/staffData';
+import Boop from './Boop';
 
 interface IFormData {
   name: string;
@@ -29,13 +27,8 @@ interface IFormData {
 
 const formSchema = yup.object().shape({
   name: yup.string().required('Name is required.'),
-  email: yup
-    .string()
-    .email('Invalid email.')
-    .required('Email is required.'),
-  person: yup
-    .string()
-    .required('Select a person to contact.'),
+  email: yup.string().email('Invalid email.').required('Email is required.'),
+  person: yup.string().required('Select a person to contact.'),
   message: yup
     .string()
     .min(3, 'Message is too short.')
@@ -99,10 +92,9 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export function ContactForm() {
-  const {classes} = useStyles();
+  const { classes } = useStyles();
   const nameInputRef = useRef<HTMLInputElement>(null);
-  const [formData, setFormData] =
-    useState<IFormData | null>(null);
+  const [formData, setFormData] = useState<IFormData | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   //-----------------------Scroll focus handler
@@ -111,23 +103,16 @@ export function ContactForm() {
       const element = nameInputRef.current;
       if (element) {
         const rect = element.getBoundingClientRect();
-        if (
-          rect.top >= 0 &&
-          rect.bottom <= window.innerHeight
-        ) {
+        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
           element.focus();
           console.log('Setting focus...');
-          window.removeEventListener(
-            'scroll',
-            handleScroll,
-          );
+          window.removeEventListener('scroll', handleScroll);
         }
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () =>
-      window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   //-----------------------Formik
@@ -149,42 +134,38 @@ export function ContactForm() {
 
   return (
     <Box>
-      <Container size='xl'>
+      <Container size="xl">
         <Container className={classes.titlecontainer}>
-          <IconPinnedFilled />
-          <Text sx={{marginLeft: '0.6rem'}}>
-            Reach out to us
-          </Text>
+          <Boop rotation={10} timing={150}>
+            <IconPinnedFilled />
+          </Boop>
+          <Text sx={{ marginLeft: '0.6rem' }}>Reach out to us</Text>
         </Container>
-        <Title
-          mb={{sm: 30, md: 50}}
-          style={{textAlign: 'center'}}>
+        <Title mb={{ sm: 30, md: 50 }} style={{ textAlign: 'center' }}>
           Get in touch
         </Title>
         <form onSubmit={formik.handleSubmit}>
-          <Container
-            size='sm'
-            className={classes.formcontainer}>
+          <Container size="sm" className={classes.formcontainer}>
             <SimpleGrid
               cols={2}
-              mb={{sm: 30, md: 40}}
+              mb={{ sm: 30, md: 40 }}
               breakpoints={[
-                {maxWidth: 'sm', cols: 1, spacing: 'xl'},
-                {maxWidth: 'xs', cols: 1, spacing: 'xs'},
-              ]}>
+                { maxWidth: 'sm', cols: 1, spacing: 'xl' },
+                { maxWidth: 'xs', cols: 1, spacing: 'xs' },
+              ]}
+            >
               <Box className={classes.firstrowinput}>
                 <TextInput
                   ref={nameInputRef}
                   required
-                  size='lg'
-                  label='Name'
-                  name='name'
+                  size="lg"
+                  label="Name"
+                  name="name"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.name}
                   error={
-                    formik.touched.name &&
-                    formik.errors.name
+                    formik.touched.name && formik.errors.name
                       ? formik.errors.name
                       : undefined
                   }
@@ -196,15 +177,14 @@ export function ContactForm() {
               <Box className={classes.firstrowinput}>
                 <TextInput
                   required
-                  size='lg'
-                  label='Email'
-                  name='email'
+                  size="lg"
+                  label="Email"
+                  name="email"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.email}
                   error={
-                    formik.touched.email &&
-                    formik.errors.email
+                    formik.touched.email && formik.errors.email
                       ? formik.errors.email
                       : undefined
                   }
@@ -217,24 +197,19 @@ export function ContactForm() {
 
             <Box>
               <Select
-                label='I would like to contact'
-                name='person'
-                onChange={(value) =>
-                  formik.setFieldValue('person', value)
-                }
+                label="I would like to contact"
+                name="person"
+                onChange={(value) => formik.setFieldValue('person', value)}
                 onBlur={formik.handleBlur}
                 value={formik.values.person}
                 error={
-                  formik.touched.person &&
-                  formik.errors.person
+                  formik.touched.person && formik.errors.person
                     ? formik.errors.person
                     : undefined
                 }
                 required
-                size='lg'
-                rightSection={
-                  <IconChevronDown size='2rem' />
-                }
+                size="lg"
+                rightSection={<IconChevronDown size="2rem" />}
                 rightSectionWidth={40}
                 classNames={{
                   input: classes.input,
@@ -242,9 +217,7 @@ export function ContactForm() {
                   rightSection: classes.rightSection,
                   item: classes.item,
                 }}
-                data={staffData.map(
-                  (staff) => staff.fullName,
-                )}
+                data={staffData.map((staff) => staff.fullName)}
               />
             </Box>
 
@@ -252,15 +225,14 @@ export function ContactForm() {
               <Textarea
                 required
                 minRows={6}
-                size='lg'
-                label='Message'
-                name='message'
+                size="lg"
+                label="Message"
+                name="message"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.message}
                 error={
-                  formik.touched.message &&
-                  formik.errors.message
+                  formik.touched.message && formik.errors.message
                     ? formik.errors.message
                     : undefined
                 }
@@ -270,13 +242,14 @@ export function ContactForm() {
               />
             </Box>
 
-            <Box style={{textAlign: 'center'}}>
+            <Box style={{ textAlign: 'center' }}>
               <Button
-                size='lg'
-                radius='xs'
-                type='submit'
+                size="lg"
+                radius="xs"
+                type="submit"
                 px={50}
-                className={classes.button}>
+                className={classes.button}
+              >
                 Send Message
               </Button>
             </Box>
@@ -287,7 +260,7 @@ export function ContactForm() {
       <Modal
         opened={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        title='Message sent!'
+        title="Message sent!"
         xOffset={0}
         centered
         overlayProps={{
@@ -297,7 +270,8 @@ export function ContactForm() {
         classNames={{
           content: classes.content,
           header: classes.header,
-        }}>
+        }}
+      >
         <Text>
           {formData
             ? `Thank you for your message, ${formData.name}! ${formData.person} will get back to you as soon as possible!`

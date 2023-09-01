@@ -1,6 +1,7 @@
 import BrandBanner from '../components/BrandBanner';
 import { ContactForm } from '../components/ContactForm';
 import { Hero } from '../components/Hero';
+import MapSection from '../components/MapSection';
 import { ServicesSection } from '../components/ServicesSection';
 import { TeamSection } from '../components/TeamSection';
 
@@ -12,6 +13,7 @@ export function StartPage() {
       <ServicesSection />
       <ContactForm />
       <BrandBanner />
+      <MapSection />
     </>
   );
 }

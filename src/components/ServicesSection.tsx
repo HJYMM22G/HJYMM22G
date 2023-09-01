@@ -1,5 +1,6 @@
 import { Container, Text, Title } from '@mantine/core';
 import { IconPinnedFilled } from '@tabler/icons-react';
+import Boop from './Boop';
 
 export function ServicesSection() {
   return (
@@ -41,7 +42,9 @@ export function ServicesSection() {
         }}
       >
         <Container sx={{ display: 'flex', padding: '0', margin: '0' }}>
-          <IconPinnedFilled />
+          <Boop rotation={10} timing={150}>
+            <IconPinnedFilled />
+          </Boop>
           <Text sx={{ marginLeft: '0.6rem' }}>Our Services</Text>
         </Container>
         <Title order={1} sx={{ paddingBottom: '0.5rem' }}>
