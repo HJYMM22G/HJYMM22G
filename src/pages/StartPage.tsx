@@ -1,4 +1,5 @@
 import BrandBanner from '../components/BrandBanner';
+import { ContactForm } from '../components/ContactForm';
 import { Hero } from '../components/Hero';
 import MapSection from '../components/MapSection';
 import { ServicesSection } from '../components/ServicesSection';
@@ -10,6 +11,7 @@ export function StartPage() {
       <Hero />
       <TeamSection />
       <ServicesSection />
+      <ContactForm />
       <BrandBanner />
       <MapSection />
     </>
