@@ -6,13 +6,12 @@ function MapSection() {
     <Box
       sx={{
         marginTop: '4rem',
-        marginLeft: '1rem',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
       }}
     >
-      <Box
+      <Container
         sx={{
           display: 'flex',
           flexDirection: 'column',
@@ -20,9 +19,7 @@ function MapSection() {
           height: '20rem',
         }}
       >
-        <Container
-          sx={{ display: 'flex', padding: '0', margin: '0 0 1rem 0', gap: 2 }}
-        >
+        <Container sx={{ display: 'flex', padding: '0', margin: '0', gap: 2 }}>
           <IconPinnedFilled />
           <Text sx={{ marginLeft: '0.6rem' }}>Find us here!</Text>
         </Container>
@@ -35,7 +32,7 @@ function MapSection() {
           loading="lazy"
           // referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-      </Box>
+      </Container>
     </Box>
   );
 }
