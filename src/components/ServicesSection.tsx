@@ -5,6 +5,7 @@ import Boop from './Boop';
 export function ServicesSection() {
   return (
     <Container
+      id="services"
       size="xl"
       sx={{
         display: 'flex',
