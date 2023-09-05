@@ -38,5 +38,20 @@
         "messageTooShort": "Meddelandet är för kort.",
         "messageRequired": "Meddelande är obligatoriskt."
       }
+  },
+  "clients": {
+    "title": "Våra Kunder"
+  },
+  "map": {
+    "title": "Hitta till oss!"
+  }, 
+  "footer": {
+    "contact": "Kontakt",
+    "headOffice": "Huvudkontor",
+    "aboutUs": "Om Oss",
+    "corporateCulture": "Företagskultur",
+    "weOffer": "Vi Erbjuder",
+    "development": "Utveckling"
   }
+
 }

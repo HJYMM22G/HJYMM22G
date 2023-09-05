@@ -37,5 +37,19 @@
         "messageTooShort": "Message is too short.",
         "messageRequired": "Message is required."
       }
+  },
+  "clients": {
+    "title": "Our Clients"
+  },
+  "map": {
+    "title": "Find us here!"
+  },
+  "footer": {
+    "contact": "Contact",
+    "headOffice": "Head Office",
+    "aboutUs": "About Us",
+    "corporateCulture": "Corporate Culture",
+    "weOffer": "We Offer",
+    "development": "Development"
   }
 }
