@@ -46,7 +46,9 @@ export function ServicesSection() {
           <Boop rotation={10} timing={150}>
             <IconPinnedFilled />
           </Boop>
-          <Text sx={{ marginLeft: '0.6rem' }}>Our Services</Text>
+          <Text sx={{ marginLeft: '0.6rem' }} fz="xl">
+            Our Services
+          </Text>
         </Container>
         <Title order={1} sx={{ paddingBottom: '0.5rem' }}>
           Our Area of Expertise

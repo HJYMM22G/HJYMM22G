@@ -90,10 +90,21 @@ export function StaffPage() {
               {person?.mail}
             </a>
           </Text>
+          <Text mt={'0.2rem'}>
+            {' '}
+            <a
+              style={{ color: 'inherit', textDecoration: 'none' }}
+              href={`tel:${person?.number}`}
+            >
+              {person?.number}
+            </a>
+          </Text>
           <Title order={2} sx={{ marginTop: '1rem' }}>
             About {person ? person.name : 'Name'}
           </Title>
-          <Text mt={'0.2rem'}>{person?.description}</Text>
+          <Text mt={'0.2rem'}>{person?.description1}</Text>
+          <Text mt={'1rem'}>{person?.description2}</Text>
+          <Text mt={'1rem'}>{person?.description3}</Text>
           <Title order={2} sx={{ marginTop: '1rem' }}>
             My Expertises
           </Title>

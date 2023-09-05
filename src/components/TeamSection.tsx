@@ -22,7 +22,9 @@ export function TeamSection() {
         <Boop rotation={10} timing={150}>
           <IconPinnedFilled />
         </Boop>
-        <Text sx={{ marginLeft: '0.6rem' }}>Who we are</Text>
+        <Text sx={{ marginLeft: '0.6rem' }} fz="xl">
+          Who we are
+        </Text>
       </Container>
       <Title order={1}>Empowering your digital future.</Title>
       <Grid
@@ -64,7 +66,9 @@ export function TeamSection() {
                   }}
                 />
                 <Title order={4}>{person.fullName}</Title>
-                <Text size="sm">{person.role}</Text>
+                <Text size="sm" fs="italic">
+                  {person.role}
+                </Text>
                 <Text>{person.bio}</Text>
               </Container>
             </Link>
