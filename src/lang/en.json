@@ -27,6 +27,15 @@
     "message": "Message",
     "sendMessage": "Send Message",
     "messageSent": "Message sent!",
-    "thanks": "Thank you for your message, {{name}}! {{person}} will get back to you as soon as possible!"
+    "thanks": "Thank you for your message, {{name}}! {{person}} will get back to you as soon as possible!",
+    "thanksNoData": "Your message has been sent!",
+    "formErrors": {
+        "nameRequired": "Name is required.",
+        "emailRequired": "Email is required.",
+        "invalidEmail": "Invalid email.",
+        "personRequired": "Select a person to contact.",
+        "messageTooShort": "Message is too short.",
+        "messageRequired": "Message is required."
+      }
   }
 }

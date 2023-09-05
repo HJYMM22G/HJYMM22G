@@ -18,5 +18,25 @@
     "fromIdeaToProduct": "Från initial idé till färdig produkt, vi förverkligar din vision.",
     "frontEndTitle": "Frontend-utveckling",
     "backEndTitle": "Backend-utveckling"
+  },
+  "contact": {
+    "reachOut": "Kontakta oss",
+    "getInTouch": "Ta kontakt",
+    "name": "Namn",
+    "email": "E-post",
+    "contactPerson": "Jag skulle vilja kontakta",
+    "message": "Meddelande",
+    "sendMessage": "Skicka meddelande",
+    "messageSent": "Meddelande skickat!",
+    "thanks": "Tack för ditt meddelande, {{name}}! {{person}} kommer att återkomma så snart som möjligt!",
+    "thanksNoData": "Ditt meddelande har skickats!",
+    "formErrors": {
+        "nameRequired": "Namn är obligatoriskt.",
+        "emailRequired": "E-post är obligatorisk.",
+        "invalidEmail": "Ogiltig e-post.",
+        "personRequired": "Välj en person att kontakta.",
+        "messageTooShort": "Meddelandet är för kort.",
+        "messageRequired": "Meddelande är obligatoriskt."
+      }
   }
 }
