@@ -27,7 +27,9 @@ export function TeamSection() {
     event.currentTarget.style.transform = 'scale(1)';
   };
   return (
-    <Container size='xl'>
+    <Container
+      id='team'
+      size='xl'>
       <Container
         sx={{
           display: 'flex',
@@ -40,7 +42,9 @@ export function TeamSection() {
           timing={150}>
           <IconPinnedFilled />
         </Boop>
-        <Text sx={{marginLeft: '0.6rem'}}>
+        <Text
+          sx={{marginLeft: '0.6rem'}}
+          fz='xl'>
           {t('teamsection.whoWeAre')}
         </Text>
       </Container>
@@ -88,7 +92,11 @@ export function TeamSection() {
                   }}
                 />
                 <Title order={4}>{person.fullName}</Title>
-                <Text size='sm'>{person.role}</Text>
+                <Text
+                  size='sm'
+                  fs='italic'>
+                  {person.role}
+                </Text>
                 <Text>{person.bio}</Text>
               </Container>
             </Link>

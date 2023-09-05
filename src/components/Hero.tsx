@@ -70,7 +70,7 @@ export function Hero() {
   const {t} = useTranslation();
 
   return (
-    <Box sx={{marginBottom: '5rem'}}>
+    <Box sx={{marginBottom: '5rem', marginTop: '3rem'}}>
       <Container>
         <Box className={classes.inner}>
           <Box className={classes.content}>

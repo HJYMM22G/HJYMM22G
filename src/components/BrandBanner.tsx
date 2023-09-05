@@ -20,7 +20,9 @@ function BrandBanner() {
           timing={150}>
           <IconPinnedFilled />
         </Boop>
-        <Text sx={{marginLeft: '0.6rem'}}>
+        <Text
+          sx={{marginLeft: '0.6rem'}}
+          fz='xl'>
           {t('clients.title')}
         </Text>
       </Container>

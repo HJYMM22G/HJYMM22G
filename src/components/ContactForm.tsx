@@ -157,14 +157,18 @@ export function ContactForm() {
 
   return (
     <Box>
-      <Container size='xl'>
+      <Container
+        id='contact'
+        size='xl'>
         <Container className={classes.titlecontainer}>
           <Boop
             rotation={10}
             timing={150}>
             <IconPinnedFilled />
           </Boop>
-          <Text sx={{marginLeft: '0.6rem'}}>
+          <Text
+            sx={{marginLeft: '0.6rem'}}
+            fz='xl'>
             {t('contact.reachOut')}
           </Text>
         </Container>

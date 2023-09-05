@@ -7,6 +7,7 @@ export function ServicesSection() {
   const {t} = useTranslation();
   return (
     <Container
+      id='services'
       size='xl'
       sx={{
         display: 'flex',
@@ -47,7 +48,9 @@ export function ServicesSection() {
             timing={150}>
             <IconPinnedFilled />
           </Boop>
-          <Text sx={{marginLeft: '0.6rem'}}>
+          <Text
+            sx={{marginLeft: '0.6rem'}}
+            fz='xl'>
             {t('servicesection.ourServices')}
           </Text>
         </Container>

@@ -17,6 +17,7 @@ import {
   IconBrandTypescript,
   IconPinnedFilled,
 } from '@tabler/icons-react';
+import {Helmet} from 'react-helmet-async';
 import {useTranslation} from 'react-i18next';
 import {useParams} from 'react-router-dom';
 import {useTranslatedStaffData} from '../hooks/useTranslatedStaffData';
@@ -34,6 +35,13 @@ export function StaffPage() {
 
   return (
     <Container>
+      <Helmet>
+        <title>{person?.fullName} - devStudio</title>
+        <meta
+          name='description'
+          content='A website for our development studio'
+        />
+      </Helmet>
       <Grid gutter='md'>
         <Col
           span={12}
@@ -91,7 +99,7 @@ export function StaffPage() {
             sx={{
               display: 'flex',
               padding: '0',
-              marginTop: '3rem',
+              marginTop: '4.5rem',
               gap: 2,
             }}>
             <IconPinnedFilled />
@@ -111,14 +119,37 @@ export function StaffPage() {
             mt={'2rem'}>
             {t('staffpage.contactMe')}
           </Title>
-          <Text mt={'0.2rem'}>{person?.mail}</Text>
+          <Text mt={'0.2rem'}>
+            {' '}
+            <a
+              style={{
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+              href={`mailto:${person?.mail}`}>
+              {person?.mail}
+            </a>
+          </Text>
+          <Text mt={'0.2rem'}>
+            {' '}
+            <a
+              style={{
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+              href={`tel:${person?.number}`}>
+              {person?.number}
+            </a>
+          </Text>
           <Title
             order={2}
             sx={{marginTop: '1rem'}}>
             {t('staffpage.about')}{' '}
             {person ? person.name : 'Name'}
           </Title>
-          <Text mt={'0.2rem'}>{person?.description}</Text>
+          <Text mt={'0.2rem'}>{person?.description1}</Text>
+          <Text mt={'1rem'}>{person?.description2}</Text>
+          <Text mt={'1rem'}>{person?.description3}</Text>
           <Title
             order={2}
             sx={{marginTop: '1rem'}}>
@@ -202,10 +233,10 @@ export function StaffPage() {
           md={6}
           sx={{
             display: 'flex',
-            justifyContent: 'center',
+            // justifyContent: 'center',
             flexDirection: 'column',
             alignItems: 'center',
-            marginTop: '3rem',
+            marginTop: '4.5rem',
             '@media (max-width: 994px)': {
               display: 'none',
             },
