@@ -26,7 +26,7 @@ export function StaffPage() {
         <title>{person?.fullName} - devStudio</title>
         <meta
           name="description"
-          content="Beginner friendly page for learning React Helmet."
+          content="A website for our development studio"
         />
       </Helmet>
       <Grid gutter="md">

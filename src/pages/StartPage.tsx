@@ -13,7 +13,7 @@ export function StartPage() {
         <title>Your development studio - devStudio</title>
         <meta
           name="description"
-          content="Beginner friendly page for learning React Helmet."
+          content="A website for our development studio"
         />
       </Helmet>
       <Hero />
