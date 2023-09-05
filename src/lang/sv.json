@@ -1,10 +1,22 @@
 {
-    "header": {
-      "services": "Tjänster",
-      "aboutUs": "Om Oss",
-      "contact": "Kontakt"
-    },
-    "hero": {
-        "title": "Låt oss <span>hjälpa</span> dig, <br/> att göra ditt <br/> företag större"
-      }
+  "header": {
+    "services": "Tjänster",
+    "aboutUs": "Om Oss",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Låt oss <span>hjälpa</span> dig, <br/> att göra ditt <br/> företag större"
+  },
+
+  "teamsection": {
+    "whoWeAre": "Vilka vi är",
+    "title": "Stärker din digitala framtid."
+  },
+  "servicesection": {
+    "ourServices": "Våra tjänster",
+    "areaOfExpertise": "Vårt expertisområden",
+    "fromIdeaToProduct": "Från initial idé till färdig produkt, vi förverkligar din vision.",
+    "frontEndTitle": "Frontend-utveckling",
+    "backEndTitle": "Backend-utveckling"
   }
+}
