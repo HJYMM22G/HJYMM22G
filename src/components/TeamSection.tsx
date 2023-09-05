@@ -8,11 +8,13 @@ import {
 import {IconPinnedFilled} from '@tabler/icons-react';
 import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
-import {staffData} from '../data/staffData';
+import {useTranslatedStaffData} from '../hooks/useTranslatedStaffData';
 import Boop from './Boop';
 
 export function TeamSection() {
   const {t} = useTranslation();
+  const translatedStaffData = useTranslatedStaffData();
+
   const handleMouseEnter = (event: {
     currentTarget: {style: {transform: string}};
   }) => {
@@ -51,7 +53,7 @@ export function TeamSection() {
           marginTop: '1.5rem',
           justifyContent: 'center',
         }}>
-        {staffData.map((person) => (
+        {translatedStaffData.map((person) => (
           <Col
             span={12}
             sm={5}
