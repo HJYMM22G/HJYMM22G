@@ -68,7 +68,7 @@ export function StaffPage() {
         <Col span={12} sm={12} md={6}>
           {' '}
           <Container
-            sx={{ display: 'flex', padding: '0', marginTop: '3rem', gap: 2 }}
+            sx={{ display: 'flex', padding: '0', marginTop: '4.5rem', gap: 2 }}
           >
             <IconPinnedFilled />
             <Text sx={{ marginLeft: '0.6rem' }}>Who we are</Text>
@@ -168,10 +168,10 @@ export function StaffPage() {
           md={6}
           sx={{
             display: 'flex',
-            justifyContent: 'center',
+            // justifyContent: 'center',
             flexDirection: 'column',
             alignItems: 'center',
-            marginTop: '3rem',
+            marginTop: '4.5rem',
             '@media (max-width: 994px)': {
               display: 'none',
             },
