@@ -13,7 +13,6 @@ function MapSection() {
       }}
     >
       <Container
-        id="find-us"
         sx={{
           display: 'flex',
           flexDirection: 'column',

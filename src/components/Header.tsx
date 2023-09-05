@@ -151,7 +151,7 @@ export function Navbar({ links }: NavbarProps) {
         </Group>
 
         <Burger
-          color="black"
+          color="orange"
           opened={opened}
           onClick={toggle}
           className={classes.burger}
