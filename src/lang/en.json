@@ -45,12 +45,21 @@
     "title": "Find us here!"
   },
   "footer": {
-    "contact": "Contact",
-    "headOffice": "Head Office",
-    "aboutUs": "About Us",
-    "corporateCulture": "Corporate Culture",
-    "weOffer": "We Offer",
-    "development": "Development"
+    "Contact": "Contact",
+    "About Us": "About Us",
+    "We Offer": "We Offer",
+    "Head Office": "Head Office",
+    "Medieinstitutet": "Medieinstitutet",
+    "Corporate Culture": "Corporate Culture",
+    "Sustainability": "Sustainability",
+    "Development": "Development",
+    "Maintenance": "Maintenance"
+  },
+  "staffpage": {
+    "whoWeAre": "Who we are",
+    "contactMe": "Contact me!",
+    "about": "About",
+    "expertise": "My Expertise"
   },
   "staff": {
     "role": "Developer",

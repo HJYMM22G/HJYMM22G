@@ -3,7 +3,7 @@ import {initReactI18next} from 'react-i18next';
 import {Outlet} from 'react-router-dom';
 import {Footer} from './components/Footer';
 import Header from './components/Header';
-import {footerData} from './data/footerData';
+import {useTranslatedFooterData} from './hooks/useTranslatedFooterData';
 import en from './lang/en.json';
 import sv from './lang/sv.json';
 
@@ -18,13 +18,15 @@ i18n.use(initReactI18next).init({
 });
 
 function App() {
+  const translatedData = useTranslatedFooterData();
+
   return (
     <>
       <Header />
       <main style={{marginBottom: '20rem'}}>
         <Outlet />
       </main>
-      <Footer data={footerData} />
+      <Footer data={translatedData} />
     </>
   );
 }

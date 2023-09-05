@@ -17,11 +17,13 @@ import {
   IconBrandTypescript,
   IconPinnedFilled,
 } from '@tabler/icons-react';
+import {useTranslation} from 'react-i18next';
 import {useParams} from 'react-router-dom';
 import {useTranslatedStaffData} from '../hooks/useTranslatedStaffData';
 
 export function StaffPage() {
   const {staffname} = useParams<{staffname: string}>();
+  const {t} = useTranslation();
   const translatedStaffData = useTranslatedStaffData();
   const person = staffname
     ? translatedStaffData.find(
@@ -94,7 +96,7 @@ export function StaffPage() {
             }}>
             <IconPinnedFilled />
             <Text sx={{marginLeft: '0.6rem'}}>
-              Who we are
+              {t('staffpage.whoWeAre')}
             </Text>
           </Container>
           <Title>{person?.fullName}</Title>
@@ -107,19 +109,20 @@ export function StaffPage() {
           <Title
             size='sm'
             mt={'2rem'}>
-            Contact me!
+            {t('staffpage.contactMe')}
           </Title>
           <Text mt={'0.2rem'}>{person?.mail}</Text>
           <Title
             order={2}
             sx={{marginTop: '1rem'}}>
-            About {person ? person.name : 'Name'}
+            {t('staffpage.about')}{' '}
+            {person ? person.name : 'Name'}
           </Title>
           <Text mt={'0.2rem'}>{person?.description}</Text>
           <Title
             order={2}
             sx={{marginTop: '1rem'}}>
-            My Expertises
+            {t('staffpage.expertise')}
           </Title>
           <div
             style={{

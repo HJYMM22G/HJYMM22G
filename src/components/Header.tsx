@@ -43,7 +43,12 @@ const Header = () => {
           />
         </div>
         <div className={classes.linkContainer}>
-          <Container style={{display: 'flex', gap: '1rem'}}>
+          <Container
+            style={{
+              display: 'flex',
+              gap: '1rem',
+              alignItems: 'baseline',
+            }}>
             <Anchor
               className={classes.link}
               href='/services'>
