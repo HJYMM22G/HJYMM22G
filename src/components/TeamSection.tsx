@@ -17,7 +17,7 @@ export function TeamSection() {
     event.currentTarget.style.transform = 'scale(1)';
   };
   return (
-    <Container size="xl">
+    <Container id="team" size="xl">
       <Container sx={{ display: 'flex', padding: '0', margin: '0', gap: 2 }}>
         <Boop rotation={10} timing={150}>
           <IconPinnedFilled />

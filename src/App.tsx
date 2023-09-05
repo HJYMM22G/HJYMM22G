@@ -1,11 +1,12 @@
 import { Outlet } from 'react-router-dom';
 import { Footer } from './components/Footer';
-import Header from './components/Header';
+import { Navbar } from './components/Header';
 import { footerData } from './data/footerData';
+import { navData } from './data/navbarData';
 function App() {
   return (
     <>
-      <Header />
+      <Navbar links={navData} />
       <main style={{ marginBottom: '20rem' }}>
         <Outlet />
       </main>
