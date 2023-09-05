@@ -10,6 +10,7 @@ import {
   IconBrandTypescript,
   IconPinnedFilled,
 } from '@tabler/icons-react';
+import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import { staffData } from '../data/staffData';
 
@@ -21,6 +22,13 @@ export function StaffPage() {
 
   return (
     <Container>
+      <Helmet>
+        <title>{person?.fullName} - devStudio</title>
+        <meta
+          name="description"
+          content="A website for our development studio"
+        />
+      </Helmet>
       <Grid gutter="md">
         <Col
           span={12}
