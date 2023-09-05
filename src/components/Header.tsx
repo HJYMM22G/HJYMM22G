@@ -28,6 +28,13 @@ const useStyles = createStyles((theme) => ({
     background: '#fbf9f3',
   },
 
+  logo: {
+    order: 0,
+
+    [theme.fn.smallerThan('sm')]: {
+      order: 1,
+    },
+  },
   dropdown: {
     position: 'absolute',
     top: headerHeight,
@@ -123,6 +130,7 @@ export function Navbar({ links }: NavbarProps) {
 
   const items = links.map((link) => (
     <NavHashLink
+      smooth
       key={link.label}
       to={link.link}
       className={cx(classes.link, {
@@ -137,11 +145,11 @@ export function Navbar({ links }: NavbarProps) {
   return (
     <Header height={headerHeight} className={classes.root}>
       <Container size="md" className={classes.header}>
-        <Group ta="start">
+        <Group ta="start" className={classes.logo}>
           <Link to="./" onClick={handleReturnClick}>
             <img
               style={{ height: '2.8rem', width: '5rem' }}
-              alt="Logo of Hike and Peak"
+              alt="Logo of devSTUDIO"
               src={logo}
             ></img>
           </Link>
