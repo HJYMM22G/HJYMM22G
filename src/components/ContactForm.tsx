@@ -139,7 +139,9 @@ export function ContactForm() {
           <Boop rotation={10} timing={150}>
             <IconPinnedFilled />
           </Boop>
-          <Text sx={{ marginLeft: '0.6rem' }}>Reach out to us</Text>
+          <Text sx={{ marginLeft: '0.6rem' }} fz="xl">
+            Reach out to us
+          </Text>
         </Container>
         <Title mb={{ sm: 30, md: 50 }} style={{ textAlign: 'center' }}>
           Get in touch

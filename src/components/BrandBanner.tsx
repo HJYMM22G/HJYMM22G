@@ -10,7 +10,9 @@ function BrandBanner() {
         <Boop rotation={10} timing={150}>
           <IconPinnedFilled />
         </Boop>
-        <Text sx={{ marginLeft: '0.6rem' }}>Our Clients</Text>
+        <Text sx={{ marginLeft: '0.6rem' }} fz="xl">
+          Our Clients
+        </Text>
       </Container>
       <Marquee
         autoFill={true}
