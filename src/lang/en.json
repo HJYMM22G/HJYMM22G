@@ -1,0 +1,10 @@
+{
+    "header": {
+      "services": "Services",
+      "aboutUs": "About Us",
+      "contact": "Contact"
+    },
+    "hero": {
+        "title": "Let us <span>help</span> you, <br/> make your <br/> company grow"
+      }
+  }

@@ -1,0 +1,10 @@
+{
+    "header": {
+      "services": "Tjänster",
+      "aboutUs": "Om Oss",
+      "contact": "Kontakt"
+    },
+    "hero": {
+        "title": "Låt oss <span>hjälpa</span> dig, <br/> att göra ditt <br/> företag större"
+      }
+  }
