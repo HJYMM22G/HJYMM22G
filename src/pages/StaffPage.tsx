@@ -81,7 +81,15 @@ export function StaffPage() {
           <Title size="sm" mt={'2rem'}>
             Contact me!
           </Title>
-          <Text mt={'0.2rem'}>{person?.mail}</Text>
+          <Text mt={'0.2rem'}>
+            {' '}
+            <a
+              style={{ color: 'inherit', textDecoration: 'none' }}
+              href={`mailto:${person?.mail}`}
+            >
+              {person?.mail}
+            </a>
+          </Text>
           <Title order={2} sx={{ marginTop: '1rem' }}>
             About {person ? person.name : 'Name'}
           </Title>
