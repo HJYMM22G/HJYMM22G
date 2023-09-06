@@ -5,6 +5,7 @@ import {Outlet} from 'react-router-dom';
 import {Footer} from './components/Footer';
 import {Navbar} from './components/Header';
 import {useTranslatedFooterData} from './hooks/useTranslatedFooterData';
+import {useTranslatedNavData} from './hooks/useTranslatedNavData';
 import en from './lang/en.json';
 import sv from './lang/sv.json';
 
@@ -18,20 +19,19 @@ i18n.use(initReactI18next).init({
   interpolation: {escapeValue: false},
 });
 
-import {navData} from './data/navbarData';
-
 function App() {
-  const translatedData = useTranslatedFooterData();
+  const translatedFooterData = useTranslatedFooterData();
+  const translatedNavData = useTranslatedNavData();
 
   const helmetContext = {};
   return (
     <>
       <HelmetProvider context={helmetContext}>
-        <Navbar links={navData} />
+        <Navbar links={translatedNavData} />
         <main style={{marginBottom: '20rem'}}>
           <Outlet />
         </main>
-        <Footer data={translatedData} />
+        <Footer data={translatedFooterData} />
       </HelmetProvider>
     </>
   );

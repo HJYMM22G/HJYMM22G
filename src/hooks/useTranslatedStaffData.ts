@@ -8,8 +8,14 @@ export const useTranslatedStaffData = () => {
     ...staff,
     role: t('staff.role'),
     bio: t(`staff.bios.${staff.name.toLowerCase()}`),
-    description: t(
-      `staff.desc.${staff.name.toLowerCase()}`,
+    description1: t(
+      `staff.desc.${staff.name.toLowerCase()}.description1`,
+    ),
+    description2: t(
+      `staff.desc.${staff.name.toLowerCase()}.description2`,
+    ),
+    description3: t(
+      `staff.desc.${staff.name.toLowerCase()}.description3`,
     ),
   }));
 };
