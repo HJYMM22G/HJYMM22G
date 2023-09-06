@@ -13,6 +13,7 @@ import {useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import {NavHashLink} from 'react-router-hash-link';
 import logo from '../assets/imgs/logo.png';
+import {LanguageButton} from './LanguageButton';
 
 const headerHeight = rem(65);
 
@@ -150,34 +151,37 @@ export function Navbar({links}: NavbarProps) {
               src={logo}></img>
           </Link>
         </Group>
-        <Group
-          onClick={scrollBackToTop}
-          spacing={5}
-          className={classes.links}>
-          {items}
+        <Group>
+          <Group
+            onClick={scrollBackToTop}
+            spacing={5}
+            className={classes.links}>
+            {items}
+          </Group>
+
+          <Burger
+            color='orange'
+            opened={opened}
+            onClick={toggle}
+            className={classes.burger}
+            size='md'
+          />
+
+          <Transition
+            transition='pop-top-right'
+            duration={200}
+            mounted={opened}>
+            {(styles) => (
+              <Paper
+                onClick={scrollBackToTop}
+                className={classes.dropdown}
+                style={styles}>
+                {items}
+              </Paper>
+            )}
+          </Transition>
+          <LanguageButton />
         </Group>
-
-        <Burger
-          color='orange'
-          opened={opened}
-          onClick={toggle}
-          className={classes.burger}
-          size='md'
-        />
-
-        <Transition
-          transition='pop-top-right'
-          duration={200}
-          mounted={opened}>
-          {(styles) => (
-            <Paper
-              onClick={scrollBackToTop}
-              className={classes.dropdown}
-              style={styles}>
-              {items}
-            </Paper>
-          )}
-        </Transition>
       </Container>
     </Header>
   );
