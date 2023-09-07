@@ -8,11 +8,12 @@ import {
   createStyles,
   rem,
 } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { NavHashLink } from 'react-router-hash-link';
+import {useDisclosure} from '@mantine/hooks';
+import {useState} from 'react';
+import {Link, useNavigate} from 'react-router-dom';
+import {NavHashLink} from 'react-router-hash-link';
 import logo from '../assets/imgs/logo.png';
+import {LanguageButton} from './LanguageButton';
 
 const headerHeight = rem(65);
 
@@ -90,13 +91,13 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export interface NavbarProps {
-  links: { link: string; label: string }[];
+  links: {link: string; label: string}[];
 }
 
-export function Navbar({ links }: NavbarProps) {
-  const [opened, { toggle, close }] = useDisclosure(false);
+export function Navbar({links}: NavbarProps) {
+  const [opened, {toggle, close}] = useDisclosure(false);
   const [active, setActive] = useState('string');
-  const { classes, cx } = useStyles();
+  const {classes, cx} = useStyles();
 
   function handleReturnClick() {
     setActive('string');
@@ -130,47 +131,59 @@ export function Navbar({ links }: NavbarProps) {
       className={cx(classes.link, {
         [classes.linkActive]: active === link.link,
       })}
-      onClick={() => handleNavigateClick(link.link)}
-    >
+      onClick={() => handleNavigateClick(link.link)}>
       {link.label}
     </NavHashLink>
   ));
 
   return (
-    <Header height={headerHeight} className={classes.root}>
-      <Container size="md" className={classes.header}>
-        <Group ta="start">
-          <Link to="./" onClick={handleReturnClick}>
+    <Header
+      height={headerHeight}
+      className={classes.root}>
+      <Container
+        size='md'
+        className={classes.header}>
+        <Group ta='start'>
+          <Link
+            to='./'
+            onClick={handleReturnClick}>
             <img
-              style={{ height: '2.8rem', width: '5rem' }}
-              alt="Logo of Hike and Peak"
-              src={logo}
-            ></img>
+              style={{height: '2.8rem', width: '5rem'}}
+              alt='Logo of Hike and Peak'
+              src={logo}></img>
           </Link>
         </Group>
-        <Group onClick={scrollBackToTop} spacing={5} className={classes.links}>
-          {items}
+        <Group>
+          <Group
+            onClick={scrollBackToTop}
+            spacing={5}
+            className={classes.links}>
+            {items}
+          </Group>
+
+          <Burger
+            color='orange'
+            opened={opened}
+            onClick={toggle}
+            className={classes.burger}
+            size='md'
+          />
+
+          <Transition
+            transition='pop-top-right'
+            duration={200}
+            mounted={opened}>
+            {(styles) => (
+              <Paper
+                onClick={scrollBackToTop}
+                className={classes.dropdown}
+                style={styles}>
+                {items}
+              </Paper>
+            )}
+          </Transition>
+          <LanguageButton />
         </Group>
-
-        <Burger
-          color="orange"
-          opened={opened}
-          onClick={toggle}
-          className={classes.burger}
-          size="md"
-        />
-
-        <Transition transition="pop-top-right" duration={200} mounted={opened}>
-          {(styles) => (
-            <Paper
-              onClick={scrollBackToTop}
-              className={classes.dropdown}
-              style={styles}
-            >
-              {items}
-            </Paper>
-          )}
-        </Transition>
       </Container>
     </Header>
   );

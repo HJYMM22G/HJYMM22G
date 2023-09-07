@@ -1,4 +1,12 @@
-import { Box, Container, Text, Title, createStyles, rem } from '@mantine/core';
+import {
+  Box,
+  Container,
+  Text,
+  Title,
+  createStyles,
+  rem,
+} from '@mantine/core';
+import {Trans, useTranslation} from 'react-i18next';
 import heroimg from '../assets/imgs/hero.png';
 
 const useStyles = createStyles((theme) => ({
@@ -58,25 +66,34 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export function Hero() {
-  const { classes } = useStyles();
+  const {classes} = useStyles();
+  const {t} = useTranslation();
+
   return (
-    <Box sx={{ marginBottom: '5rem', marginTop: '3rem' }}>
+    <Box sx={{marginBottom: '5rem', marginTop: '3rem'}}>
       <Container>
         <Box className={classes.inner}>
           <Box className={classes.content}>
-            <Title ta="center" className={classes.title}>
-              Let us{' '}
-              <Text component="span" inherit color="#BAB653">
-                help{' '}
-              </Text>{' '}
-              you, <br />
-              make your <br />
-              company grow
+            <Title
+              ta='center'
+              className={classes.title}>
+              <Trans
+                components={{
+                  span: (
+                    <Text
+                      component='span'
+                      inherit
+                      color='#BAB653'
+                    />
+                  ),
+                }}>
+                {t('hero.title')}
+              </Trans>
             </Title>
           </Box>
           <Box>
             <img
-              alt="an illustration showcasing 2 people surrounded by vegetation. One is using a magnifying glass and the other one is reading a book."
+              alt='an illustration showcasing 2 people surrounded by vegetation. One is using a magnifying glass and the other one is reading a book.'
               src={heroimg}
               className={classes.image}
             />

@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "Services": "Tjänster",
+    "About Us": "Om Oss",
+    "Contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Låt oss <span>hjälpa</span> dig, <br/> att göra ditt <br/> företag större"
+  },
+
+  "teamsection": {
+    "whoWeAre": "Om oss",
+    "title": "Stärker din digitala framtid."
+  },
+  "servicesection": {
+    "ourServices": "Våra tjänster",
+    "areaOfExpertise": "Vårt expertisområden",
+    "fromIdeaToProduct": "Från initial idé till färdig produkt, vi förverkligar din vision.",
+    "frontEndTitle": "Frontend-utveckling",
+    "backEndTitle": "Backend-utveckling"
+  },
+  "contact": {
+    "reachOut": "Kontakta oss",
+    "getInTouch": "Ta kontakt",
+    "name": "Namn",
+    "email": "E-post",
+    "contactPerson": "Jag skulle vilja kontakta",
+    "message": "Meddelande",
+    "sendMessage": "Skicka meddelande",
+    "messageSent": "Meddelande skickat!",
+    "thanks": "Tack för ditt meddelande, {{name}}! {{person}} kommer att återkomma så snart som möjligt!",
+    "thanksNoData": "Ditt meddelande har skickats!",
+    "formErrors": {
+      "nameRequired": "Namn är obligatoriskt.",
+      "emailRequired": "E-post är obligatorisk.",
+      "invalidEmail": "Ogiltig e-post.",
+      "personRequired": "Välj en person att kontakta.",
+      "messageTooShort": "Meddelandet är för kort.",
+      "messageRequired": "Meddelande är obligatoriskt."
+    }
+  },
+  "clients": {
+    "title": "Våra Kunder"
+  },
+  "map": {
+    "title": "Hitta till oss!"
+  },
+  "footer": {
+    "Contact": "Kontakt",
+    "About Us": "Om Oss",
+    "We Offer": "Vi Erbjuder",
+    "Head Office": "Huvudkontor",
+    "Medieinstitutet": "Medieinstitutet",
+    "Corporate Culture": "Företagskultur",
+    "Sustainability": "Hållbarhet",
+    "Development": "Utveckling",
+    "Maintenance": "Underhåll"
+  },
+  "staffpage": {
+    "whoWeAre": "Vilka vi är",
+    "contactMe": "Kontakta mig!",
+    "about": "Om",
+    "expertise": "Min Expertis"
+  },
+  "staff": {
+    "role": "Utvecklare",
+    "bios": {
+      "martina": "Martina är en frontend-utvecklare som kombinerar design med tekniska färdigheter.",
+      "hampus": "Hampus är en frontend-utvecklare med bakgrund inom grafisk design.",
+      "moa": "Moa är en frontend-utvecklare med en passion för UX och grafisk design.",
+      "yehad": "Yehad är en frontend-utvecklare som värdesätter ständigt lärande.",
+      "jenny": "Jenny är en frontend-utvecklare som specialiserar sig på funktionalitet och databaser."
+    },
+    "desc": {
+      "martina": {
+        "description1": "Möt Martina, vår dedikerade frontendutvecklare med en passion för design och tillgänglighet. Med ett skarpt öga för estetik och ett engagemang för att göra webbplatser inkluderande för alla användare, bidrar Martina med en unik blandning av kreativitet och teknisk expertis till vårt team.",
+        "description2": "Martinas expertis ligger i att skapa visuellt imponerande och användarvänliga webbplatser som inte bara fängslar din publik, men också säkerställer att alla kan komma åt och navigera ditt innehåll sömlöst. Hennes noggranna uppmärksamhet på detaljer innebär att din webbplats inte bara kommer att se bra ut utan också vara fullt optimerad för prestanda.",
+        "description3": "Med henne vid rodret för din frontendutveckling, kan du vara trygg med att din webbplats blir ett mästerverk både i form och funktion. Gå med oss i att välkomna Martina till vårt team och låt hennes expertis lyfta din online-närvaro till nya höjder."
+      },
+      "hampus": {
+        "description1": "Möt Hampus, vår mångsidiga utvecklare som bidrar med en unik blandning av grafisk design och funktionalitet till vårt team. Med en bakgrund inom visuell estetik och en passion för att skapa mycket funktionella webbplatser, är Hampus din expert att gå till för att föra skönhet och hjärna till din online-närvaro.",
+        "description2": "Hampus kombinerar sina grafiska designfärdigheter med en djup förståelse för webbutveckling för att skapa webbplatser som inte bara är visuellt slående, men också otroligt funktionella. Hans uppmärksamhet på detaljer och engagemang för användarupplevelse säkerställer att din webbplats inte bara fångar uppmärksamhet men också håller besökarna engagerade.",
+        "description3": "Han är inte bara en utvecklare; han är en kreativ problemlösare, alltid på jakt efter sätt att förbättra din online-närvaro. När han inte är nedsänkt i kod eller perfektionerar designen, hittar du Hampus utforska de senaste trenderna inom webbutveckling och pusha gränserna för vad som är möjligt. Gå med oss i att välkomna Hampus till vårt team och låt hans unika kombination av färdigheter lyfta din webbplats till nya höjder av funktionalitet och skönhet."
+      },
+      "moa": {
+        "description1": "Möt Moa, vår mångsidiga frontendutvecklare som bidrar med en kreativ touch till både tekniska och visuella aspekter av webbutveckling. Med en kärlek för att skapa enastående användarupplevelser och ett öga för fängslande grafisk design, är Moa din expert att gå till för en väl avrundad webbnärvaro.",
+        "description2": "Moas expertis sträcker sig utöver kodning; hon är utmärkt på att skapa sömlösa användarupplevelser som lämnar ett varaktigt intryck på din publik. Hennes användarcentrerade inställning säkerställer att din webbplats inte bara är funktionell utan också intuitivt utformad för att möta behoven hos dina besökare.",
+        "description3": "Hon bygger broar sömlöst mellan kod och design, och säkerställer att din webbplats inte bara fungerar felfritt men också ser fantastisk ut. När Moa inte är nedsänkt i kod eller perfektionerar designen, hittar du henne utforska de senaste UX-trenderna och experimenterar med innovativa grafiska designkoncept. Gå med oss i att välkomna Moa till vårt team, och låt hennes unika blandning av färdigheter lyfta dina webbprojekt till nya höjder av användartillfredsställelse och visuell attraktion."
+      },
+      "yehad": {
+        "description1": "Möt Yehad, vår engagerade frontendutvecklare som personifierar en outtröttlig törst för kunskap och ett engagemang för excellens. Med en orubblig hängivenhet till personlig och professionell tillväxt, är Yehad din expert att gå till för att hålla sig i framkant av webbutvecklingstrender.",
+        "description2": "Yehads passion för lärande säkerställer inte bara att han är uppdaterad med de senaste frontend-teknologierna, men också låter honom att ta med färska och innovativa lösningar till bordet. Hans anslutning till ständigt förbättring säkerställer att din webbplats är byggd enligt de högsta standarderna av funktionalitet och användarvänlighet.",
+        "description3": "När Yehad inte är nedsänkt i kod eller utforskar nya frontend-teknologier, hittar du honom delar sin kunskap och expertis med gemenskapen genom bloggar och webbseminarier. Gå med oss i att välkomna Yehad till vårt team och låt hans passion för excellens driva ditt projekt till oanade höjder av framgång."
+      },
+      "jenny": {
+        "description1": "Möt Jenny, vår begåvade frontendutvecklare med en passion för att göra webbplatser både vackra och funktionella. Med en bakgrund inom både programmering och grafisk design, bidrar Jenny med en holistisk förståelse för webbprojekt som ger en ovärderlig bredd och djup till vårt team.",
+        "description2": "Jennys expertis i frontend-utveckling och design innebär att hon inte bara kan kodifiera dina idéer till verklighet, men också göra det på ett sätt som är visuellt och interaktivt lockande. Hennes kompetens inom så många aspekter av webbutveckling gör henne till en värdefull resurs för att ta din webbplats från bra till utmärkt.",
+        "description3": "När Jenny inte är upptagen med att kodifiera eller designa, hittar du henne att djupt gräva in i de senaste tekniska trenderna och experimentera med nya designmönster. Gå med oss i att välkomna Jenny till vårt team och låt hennes diversifierade färdigheter göra din webbplats till en fulländad symfoni av kod och design."
+      }
+    }
+  }
+}
