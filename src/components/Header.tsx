@@ -7,84 +7,84 @@ import {
   Transition,
   createStyles,
   rem,
-} from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { NavHashLink } from "react-router-hash-link";
-import logo from "../assets/imgs/logo.png";
+} from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
+import logo from '../assets/imgs/logo.png';
 
 const headerHeight = rem(65);
 
 const useStyles = createStyles((theme) => ({
   root: {
-    position: "fixed",
+    position: 'fixed',
     top: 0,
     left: 0,
     right: 0,
     zIndex: 10,
-    borderBottom: "none",
-    transition: "transform 0.3s ease-in-out",
-    background: "#fbf9f3",
+    borderBottom: 'none',
+    transition: 'transform 0.3s ease-in-out',
+    background: '#fbf9f3',
   },
 
   dropdown: {
-    position: "absolute",
+    position: 'absolute',
     top: headerHeight,
     left: 0,
     right: 0,
     zIndex: 0,
-    background: "#fbf9f3",
+    background: '#fbf9f3',
 
-    [theme.fn.largerThan("sm")]: {
-      display: "none",
+    [theme.fn.largerThan('sm')]: {
+      display: 'none',
     },
   },
 
   header: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    height: "100%",
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    height: '100%',
   },
 
   links: {
-    [theme.fn.smallerThan("sm")]: {
-      display: "none",
+    [theme.fn.smallerThan('sm')]: {
+      display: 'none',
     },
   },
 
   burger: {
-    [theme.fn.largerThan("sm")]: {
-      display: "none",
+    [theme.fn.largerThan('sm')]: {
+      display: 'none',
     },
   },
 
   link: {
-    display: "block",
+    display: 'block',
     lineHeight: 1,
     padding: `${rem(8)} ${rem(12)}`,
     borderRadius: theme.radius.sm,
-    textDecoration: "none",
-    color: "#000000",
+    textDecoration: 'none',
+    color: '#000000',
     fontSize: theme.fontSizes.sm,
     fontWeight: 600,
 
-    "&:hover": {
-      textDecoration: "underline",
-      textDecorationColor: "#BAB653",
+    '&:hover': {
+      textDecoration: 'underline',
+      textDecorationColor: '#BAB653',
     },
 
-    [theme.fn.smallerThan("sm")]: {
+    [theme.fn.smallerThan('sm')]: {
       borderRadius: 0,
       padding: theme.spacing.md,
     },
   },
 
   linkActive: {
-    "&, &:hover": {
-      textDecoration: "underline",
-      textDecorationColor: "#BAB653",
+    '&, &:hover': {
+      textDecoration: 'underline',
+      textDecorationColor: '#BAB653',
     },
   },
 }));
@@ -95,21 +95,21 @@ export interface NavbarProps {
 
 export function Navbar({ links }: NavbarProps) {
   const [opened, { toggle, close }] = useDisclosure(false);
-  const [active, setActive] = useState("string");
+  const [active, setActive] = useState('string');
   const { classes, cx } = useStyles();
 
   function handleReturnClick() {
-    setActive("string");
+    setActive('string');
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   }
 
   function scrollBackToTop() {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   }
 
@@ -123,7 +123,8 @@ export function Navbar({ links }: NavbarProps) {
 
   const items = links.map((link) => (
     <NavHashLink
-      style={{ display: "flex", justifyContent: "flex-end" }}
+      smooth
+      style={{ display: 'flex', justifyContent: 'flex-end' }}
       key={link.label}
       to={link.link}
       className={cx(classes.link, {
@@ -141,7 +142,7 @@ export function Navbar({ links }: NavbarProps) {
         <Group ta="start">
           <Link to="./" onClick={handleReturnClick}>
             <img
-              style={{ height: "2.8rem", width: "5rem" }}
+              style={{ height: '2.8rem', width: '5rem' }}
               alt="Logo of Hike and Peak"
               src={logo}
             ></img>
