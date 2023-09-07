@@ -158,6 +158,7 @@ export function Navbar({ links }: NavbarProps) {
             {items}
           </Group>
 
+          <LanguageButton />
           <Burger
             color="orange"
             opened={opened}
@@ -181,7 +182,6 @@ export function Navbar({ links }: NavbarProps) {
               </Paper>
             )}
           </Transition>
-          <LanguageButton />
         </Group>
       </Container>
     </Header>
