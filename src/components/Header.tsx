@@ -123,6 +123,8 @@ export function Navbar({ links }: NavbarProps) {
 
   const items = links.map((link) => (
     <NavHashLink
+      smooth
+      style={{ display: 'flex', justifyContent: 'flex-end' }}
       key={link.label}
       to={link.link}
       className={cx(classes.link, {
