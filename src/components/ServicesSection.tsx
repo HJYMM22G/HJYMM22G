@@ -24,7 +24,7 @@ export function ServicesSection() {
           },
         }}>
         <img
-          src='../src/assets/services.png'
+          src='/assets/services.png'
           alt=''
           style={{width: '100%', height: '100%'}}
         />

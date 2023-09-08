@@ -30,7 +30,7 @@ export const staffData: Staff[] = [
     image: '/assets/staff/martina.png',
     color: '#DEB8FC',
     mail: 'martina.kreivi@medieinstitutet.se',
-    funImage: '../src/assets/bike.png',
+    funImage: '/assets/bike.png',
     number: '0701234567',
   },
   {
@@ -48,7 +48,7 @@ export const staffData: Staff[] = [
     image: '/assets/staff/hampus.png',
     color: '#353519',
     mail: 'hampus.isebring@medieinstitutet.se',
-    funImage: '../src/assets/earth.png',
+    funImage: '/assets/earth.png',
     number: '0701234567',
   },
   {
@@ -66,7 +66,7 @@ export const staffData: Staff[] = [
     image: '/assets/staff/moa.png',
     color: '#E9CF81',
     mail: 'moa.hedendahl@medieinstitutet.se',
-    funImage: '../src/assets/camp.png',
+    funImage: '/assets/camp.png',
     number: '0701234567',
   },
   {
@@ -84,7 +84,7 @@ export const staffData: Staff[] = [
     image: '/assets/staff/yehad.png',
     color: '#F98638',
     mail: 'yehad.moussaoui@medieinstitutet.se',
-    funImage: '../src/assets/staff.png',
+    funImage: '/assets/staff.png',
     number: '0701234567',
   },
   {
@@ -102,7 +102,7 @@ export const staffData: Staff[] = [
     image: '/assets/staff/jenny.png',
     color: '#FFAA9F',
     mail: 'jenny.pettersson@medieinstitutet.se',
-    funImage: '../src/assets/cook.png',
+    funImage: '/assets/cook.png',
     number: '0701234567',
   },
 ];
